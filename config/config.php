@@ -1,0 +1,10 @@
+<?php
+/**
+ *Date:2019/2/20
+ *Time:10:09
+ */
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PWD','root1234');
+define('DB_NAME','myshop');
+define('DB_CHARSET','utf8');

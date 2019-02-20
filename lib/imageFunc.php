@@ -4,11 +4,11 @@
  *Time:15:55
  */
 
-require_once './stringFunc.php';
+require_once 'stringFunc.php';
 
-function getVerifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = 'varify')
+function getVerifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = 'verify')
 {
-    $width = 120;
+    $width = 100;
     $height = 30;
     //创建画布
     $img = imagecreatetruecolor($width,$height);
@@ -16,9 +16,10 @@ function getVerifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = 
     $white = imagecolorallocate($img,255,255,255);
     $black = imagecolorallocate($img,0,0,0);
     //填充背景
-    imagefilledrectangle($img,1,1,$width-1,$height-1,$white);
+    imagefilledrectangle($img,1,1,$width-2,$height-2,$white);
 
-    $fonts = array('arial.ttf','ARIALN.TTF','ariblk.ttf','corbelb.ttf','pala.ttf','simfang.ttf','simkai.ttf','STKAITI.TTF');
+//    $fonts = array('arial.ttf','ARIALN.TTF','ariblk.ttf','corbelb.ttf','pala.ttf','simfang.ttf','simkai.ttf','STKAITI.TTF');
+    $fonts = 'simkai.ttf';//字体暂时只保存一个使用
     //获取验证码并存入session
     $string = getRandomString($type,$length);
     $_SESSION[$sess_name] = $string;
@@ -28,7 +29,7 @@ function getVerifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = 
         $angle = mt_rand(-20,20);
         $startx = 10+$i*$size;
         $starty = mt_rand(22,28);
-        $font = '../font/'.$fonts[mt_rand(0,$length-1)];
+        $font = '../font/'.$fonts;
         $color = imagecolorallocate($img,mt_rand(20,90),mt_rand(80,120),mt_rand(90,180));
         imagettftext($img,$size,$angle,$startx,$starty,$color,$font,substr($string,$i,1));
     }
