@@ -34,7 +34,8 @@ function insert($table,$array)
         return mysqli_insert_id($link);
     }else{
         //抛出异常
-        die(mysqli_error($link));
+        // die(mysqli_error($link));
+        return false;
     }
 }
 
@@ -54,7 +55,8 @@ function delete($table,$where = null)
         return mysqli_affected_rows($link);
     }else{
         //抛出异常
-        die(mysqli_error($link));
+        // die(mysqli_error($link));
+        return false;
     }
 }
 
@@ -79,7 +81,8 @@ function update($table,$array,$where)
         return mysqli_affected_rows($link);
     }else{
         //抛出异常
-        die(mysqli_error($link));
+        // die(mysqli_error($link));
+        return false;
     }
 }
 
@@ -98,7 +101,8 @@ function fetchOne($sql,$result_type = MYSQLI_ASSOC)
         return $res;
     }else{
         //抛出异常
-        die(mysqli_error($link));
+        // die(mysqli_error($link));
+        return false;
     }
 }
 
@@ -117,6 +121,7 @@ function fetchAll($sql,$result_type = MYSQLI_ASSOC)
         return $res;
     }else{
         //抛出异常
-        die(mysqli_error($link));
+        // die(mysqli_error($link));
+        return false;
     }
 }

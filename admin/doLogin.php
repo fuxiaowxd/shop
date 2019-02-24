@@ -13,7 +13,7 @@ $password = md5(trim($_POST['password']));
 $verify1 = $_SESSION['verify'];
 
 if($verify == $verify1){
-    $sql = "SELECT *FROM admin_user WHERE name = '".$userName."'";
+    $sql = "SELECT *FROM admin_user WHERE name ='{$userName}'";
     $user = fetchOne($sql);
     if(!$user){
         alertMsg('管理员账号不正确，请重新输入！','login.php');
