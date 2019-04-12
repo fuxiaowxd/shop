@@ -17,6 +17,7 @@ function connect()
     return $link;
 }
 //试一下解决冲突
+//试一下只切换单文件
 /**
  * 插入一条数据
  * @param $table
