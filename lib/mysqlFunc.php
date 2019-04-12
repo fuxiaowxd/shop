@@ -16,7 +16,7 @@ function connect()
     mysqli_set_charset($link,DB_CHARSET);
     return $link;
 }
-
+//试一下只切换单文件
 /**
  * 插入一条数据
  * @param $table

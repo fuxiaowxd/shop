@@ -17,3 +17,11 @@ function test()
 {
     echo '测试修改';
 }
+
+/**
+ * 测试切换单文件
+ */
+function test_2()
+{
+    echo '测试切换单文件';
+}
